@@ -26,6 +26,6 @@ func average(values ...float64) float64 {
 	return sum / count
 }
 
-func main3() {
+func mainfun() {
 	fmt.Println(average(3.0, 3, 5, 9.9))
 }

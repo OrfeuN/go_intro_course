@@ -100,7 +100,7 @@ Array
         // len(mySlice) --> 5
         // cap(mySlice) --> 10
 
-        fruitArray := [5]strin{"banana", "apple","grapes", "mango", "blueberry"}
+        fruitArray := [5]string{"banana", "apple","grapes", "mango", "blueberry"}
         splicedFruit := fruitArray[1..3] // apple & grapes // len of 2 & cap of 4
         fruits := append(splicedFruit, "blackberry", "cherry") // apple, grape, blackberry, cherry  // len of 4 & cap of 4
 
@@ -118,3 +118,62 @@ Map
         if email, ok := emails[0]; ok{} //executes code if there is a key of 0 in the map
 
         delete(emails, 5) // deletes the item for a key of 5
+
+
+Structs 
+    // a comment has to be provided for exportable types
+    type User struct{
+            ID      int
+            name   string
+            email   string
+    }
+    //capitalised means it will be accessible outside of the package
+    user := User{ID:1, name: "name", email:"email"}
+
+    type User struct{
+            ID              int
+            name, email   string
+    }
+
+    // a comment has to be provided for exportable types
+    type Group struct{
+        role        string
+        users       []User
+    }
+
+defer delays exexuction of line and acts as a first in last out (reversed order)
+    panic ends the programme
+    recover tells go what to do if panic occurs
+        returns what was passed to panic
+    recover must be paired with defer. which will fire even after panic 
+
+
+methods
+    func (u User) describe() string {
+        desc := fmt.Sprintf("Name: %s %s, Id: %d, Email: %s", u.FName, u.LName, u.ID, u.Email)
+        return desc
+    }
+
+    OR 
+
+    Use pointer if state is to be modified
+    func (u *User) describe() string {
+        desc := fmt.Sprintf("Name: %s %s, Id: %d, Email: %s", u.FName, u.LName, u.ID, u.Email)
+        return desc
+    }
+
+    usage: 
+        user:= User {ID: 1}
+        user.describe()
+
+interfaces:
+    set of behaviours that define a type
+
+    type name interface{
+        ....
+    }
+
+go handles routes using net/http
+    func main(){
+        http.HandleFunc("/", home) // home is a function
+    }
