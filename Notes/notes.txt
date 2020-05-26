@@ -177,3 +177,16 @@ go handles routes using net/http
     func main(){
         http.HandleFunc("/", home) // home is a function
     }
+    look at code/api.go and code/server.go
+
+goroutine is a lightweight thread managed by the go runtime
+    implemented by adding "go" before calling a function - spins up a new thread
+
+    func somethignSlow(){}
+    func main(){
+        go somethignSlow()
+    }
+
+    package sync helps to synchronise calls
+    sync.WaitGroup
+    channel can be used to communicte between goroutines

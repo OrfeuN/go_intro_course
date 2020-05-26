@@ -94,7 +94,7 @@ func (person Person) getHomeWorld() (error, Planet) {
 	return err, planet
 }
 
-func main() {
+func mainend() {
 	http.HandleFunc("/people/", handlePeople)
 	http.HandleFunc("/", handleHome)
 	log.Fatal(http.ListenAndServe(":8080", nil))
