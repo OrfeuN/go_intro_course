@@ -22,7 +22,7 @@ func printStuff(wg *sync.WaitGroup) {
 	}
 }
 
-func main2() {
+func mainwg() {
 	var wg sync.WaitGroup
 	wg.Add(1)
 	go printStuff(&wg)
