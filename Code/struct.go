@@ -4,21 +4,21 @@ import (
 	"fmt"
 )
 
-// provide a comment about the type
-type User struct {
-	ID    int
-	FName string
-	LName string
-	Email string
-}
+// // provide a comment about the type
+// type User struct {
+// 	ID    int
+// 	FName string
+// 	LName string
+// 	Email string
+// }
 
-// provide a comment
-type Group struct {
-	role          string
-	users         []User
-	latestUser    User
-	spaceAvailble bool
-}
+// // provide a comment
+// type Group struct {
+// 	role          string
+// 	users         []User
+// 	latestUser    User
+// 	spaceAvailble bool
+// }
 
 func describeUser(u User) string {
 	u.ID = 25
@@ -28,9 +28,9 @@ func describeUser(u User) string {
 
 func describeGroup(group Group) string {
 	var count int = len(group.users)
-	var latestUser string = describeUser(group.latestUser)
+	var latestUser string = describeUser(group.lastUser)
 
-	desc := fmt.Sprintf("This group %s has %d users. The latest user is %s. Has space available: %t", group.role, count, latestUser, group.spaceAvailble)
+	desc := fmt.Sprintf("This group %s has %d users. The latest user is %s. Has space available: %t", group.role, count, latestUser, group.spaceAvailable)
 	return desc
 }
 
@@ -48,7 +48,7 @@ func main7() {
 	fmt.Println(describeUser(user))
 	fmt.Println(user)
 
-	group := Group{role: "users", users: users, latestUser: user}
+	group := Group{role: "users", users: users, lastUser: user}
 
 	fmt.Println(describeGroup(group))
 
