@@ -55,7 +55,7 @@ func addTodo(writer http.ResponseWriter, req *http.Request) {
 	http.Redirect(writer, req, "/todos", http.StatusSeeOther)
 }
 
-func main() {
+func main5() {
 	fmt.Println("Starting web server on 8080")
 	http.HandleFunc("/", home)
 	http.HandleFunc("/todos/", handleTodosReq)
